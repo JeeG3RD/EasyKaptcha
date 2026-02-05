@@ -1,0 +1,6 @@
+# Ignore All
+*
+
+# Except only files needed to be pushed to git
+!.gitignore
+!LICENSE
