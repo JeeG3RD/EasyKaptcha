@@ -4,3 +4,7 @@
 # Except only files needed to be pushed to git
 !.gitignore
 !LICENSE
+
+!dist/
+!dist/js/
+!core.js
