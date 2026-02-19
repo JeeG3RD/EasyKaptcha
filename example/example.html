@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyKaptcha Example</title>
+</head>
+<body>
+  <h1>EasyKaptcha Example Form</h1>
+  <form id="example_form" action="" method="get">
+    <div>
+      <label for="lastname">LastName</label>
+      <input type="text" id="lastname">
+    </div>
+
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name">
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email">
+    </div>
+
+    <section id="kaptcha"></section>
+
+    <button type="submit" id="confirm">Confirm</button>
+  </form>
+</body>
+</html>
+
+<script src="link-to-js"></script> <!-- link-to-js -->
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", (event) => {
+    var kaptcha = new EasyKaptcha()
+
+    kaptcha.init({
+      "formId": "example_form",
+      "buttonId": "confirm",
+      "zoneId": "kaptcha",
+      "length": 10
+    });
+  });
+</script>
