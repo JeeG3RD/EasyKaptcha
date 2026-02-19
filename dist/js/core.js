@@ -2,14 +2,25 @@ class EasyKaptcha {
   form = null;
   button = null;
   zone = null;
+  possibleChars = "";
+  length = 6;
 
   //
-  constructor(){}
+  constructor(){
+    this.possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    this.length = 6;
+    this.form = null;
+    this.button = null;
+    this.zone = null;
+  }
 
   init(config) {
     if (false === this.checkConfig(config))
       return;
-    
+
+    // Disable the button
+    this.button.disabled = true;
+
     // Continue the init
   }
 
@@ -42,6 +53,14 @@ class EasyKaptcha {
     if (!this.zone) {
       console.error("EasyKaptcha ERROR : Zone not found.");
       return false;
+    }
+
+    if (undefined !== config.length) {
+      this.length = config.length;
+    }
+
+    if (undefined !== config.possibleChars) {
+      this.possibleChars = config.possibleChars;
     }
 
     return true
