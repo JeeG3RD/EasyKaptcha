@@ -1,7 +1,7 @@
 class EasyKaptcha {
   constructor(){}
 
-  captcha(config) {
+  init(config) {
     // We search for the form by ID in the document
     const form = document.getElementById(
       config === null || config === void 0 ? void 0 : config.formId,
@@ -21,5 +21,9 @@ class EasyKaptcha {
       console.error("EasyKaptcha ERROR : Confirm button not found.");
       error;
     }
+
+    
   }
 }
+
+export default EasyKaptcha;
